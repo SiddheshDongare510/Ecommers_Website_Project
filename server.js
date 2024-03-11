@@ -5,10 +5,6 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from './routes/authRoute.js';
 import cors from 'cors';
-<<<<<<< HEAD
-
-=======
->>>>>>> 0a6003613f2e718c0a9f485efd1e14db4259c4e9
 //configure env
 dotenv.config();
 
@@ -27,7 +23,7 @@ app.use("/api/v1/auth",authRoutes);
 
 //rest api
 app.get("/",(req,res) => {
-    res.send("<h1>Welcome to Online Shop</h1>");
+    res.send("<h1>Welcome to ONLINE SHOP</h1>");
 });
 
 //Port
