@@ -3,7 +3,7 @@ import Layout from '../components/Layout/Layout'
 
 const HomePge = () => {
   return (
-<Layout>
+<Layout title={" Ecommer app"}>
 <h1>Homepage</h1>
 </Layout>
     
