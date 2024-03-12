@@ -5,10 +5,6 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from './routes/authRoute.js';
 import cors from 'cors';
-<<<<<<< HEAD
-
-=======
->>>>>>> 0a6003613f2e718c0a9f485efd1e14db4259c4e9
 //configure env
 dotenv.config();
 
@@ -19,6 +15,7 @@ connectDB();
 const app = express();
 
 //middlewares
+app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
