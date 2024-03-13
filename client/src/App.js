@@ -1,6 +1,6 @@
 
 import {Routes,Route} from 'react-router-dom'
-import HomePge from './pages/HomePge';
+import HomePge from './pages/HomePage';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Policy from './pages/Policy';

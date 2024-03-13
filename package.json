@@ -8,11 +8,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-<<<<<<< HEAD
-    "client":"npm start --prefix ./client",
-=======
     "client": "npm start --prefix ./client",
->>>>>>> 60b51d556f8f1eaa562682006aad85e960096b33
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
