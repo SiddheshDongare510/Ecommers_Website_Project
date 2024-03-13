@@ -1,6 +1,5 @@
 {
   "name": "ecommerseweb",
- 
   "version": "1.0.0",
   "description": "ecommerse web api",
   "main": "server.js",
