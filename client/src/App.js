@@ -16,8 +16,8 @@ function App() {
     <>
    <Routes>
     <Route path ='/' element={<HomePge/>}/>
-    <Route path="/dashboard" element = {<PrivateRoute/>}>
-      <Route path="" element={<Dashboard/>} />
+    <Route path="/dashboard" element={<PrivateRoute/>}>
+        <Route path ="" element={<Dashboard/>}/>
     </Route>
     <Route path ='/register' element={<Register/>}/>
     <Route path ='/login' element={<Login/>}/>
