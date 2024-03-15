@@ -1,11 +1,11 @@
-    import React , {useState} from 'react'
-    import Layout from '../../components/Layout/Layout'
-    import axios from 'axios'
-    import {useNavigate, useLocation} from 'react-router-dom'
+    import React , {useState} from 'react';
+    import Layout from '../../components/Layout/Layout';
+    import axios from 'axios';
+    import {useNavigate, useLocation} from 'react-router-dom';
     import toast from 'react-hot-toast'
     import "../../style/AuthStyle.css";
     import { useAuth } from '../../context/auth';
-    import { authEndPoints } from '../../service/auth'
+    import { authEndPoints } from '../../service/auth';
 
     const Login = () => {
         
@@ -72,6 +72,10 @@
         <div className="mb-3">
         </div>
     
+        <div className="mb-3">
+        <button type="button" className="btn btn-primary" onClick={() => {navigate('/forgot-password')}}>Forgot Password</button>
+        </div>
+
         <button type="submit" className="btn btn-primary">LOGIN</button>
     </form>
 
