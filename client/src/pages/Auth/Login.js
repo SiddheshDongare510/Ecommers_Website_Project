@@ -5,7 +5,7 @@
     import toast from 'react-hot-toast'
     import "../../style/AuthStyle.css";
     import { useAuth } from '../../context/auth';
-
+    import { authEndPoints } from '../../service/auth'
     // //form function 
     // const handleSubmit =async(e)=> {
     //     e.preventDefault();
@@ -46,7 +46,7 @@
             const handleSubmit =async(e)=> {
                 e.preventDefault();
             try {
-            const res = await axios.post(`http://localhost:3000/api/v1/auth/register`, {
+            const res = await axios.post(`${authEndPoints.login}`, {
             email,
             password,
             });
