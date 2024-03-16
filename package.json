@@ -1,6 +1,7 @@
 {
   "name": "ecommerseweb",
   "version": "1.0.0",
+  "proxy":"http://localhost:8080",
   "description": "ecommerse web api",
   "main": "server.js",
   "type": "module",

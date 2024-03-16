@@ -1,5 +1,5 @@
 
-import ForgotPassword from './../pages/Auth/ForgotPassword';
+import ForgotPassword from "../pages/Auth/ForgotPassword";
 const  auth_base = "http://localhost:8080/api/v1/auth";
 
 export const authEndPoints = {
