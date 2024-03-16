@@ -1,29 +1,25 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-const AdminMenu = () => {
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+const UserMenu = () => {
+
   return (
     <>
       <div className="text-center">
         <div className="list-group dashboard-menu">
-          <h4>Admin Panel</h4>
+          <h4>Dashboard</h4>
           <NavLink
-            to="/dashboard/admin/create-category"
+            to="/dashboard/user/profile"
             className="list-group-item list-group-item-action"
           >
-            Create Category
+          Product
           </NavLink>
           <NavLink
-            to="/dashboard/admin/create-product"
+            to="/dashboard/user/orders"
             className="list-group-item list-group-item-action"
           >
-            Create Product
+           Orders
           </NavLink>
-          <NavLink
-            to="/dashboard/admin/users"
-            className="list-group-item list-group-item-action"
-          >
-            Users
-            </NavLink>
+         
 
          
 
@@ -39,7 +35,10 @@ const AdminMenu = () => {
         </div>
       </div>
     </>
-  );
-};
+  
 
-export default AdminMenu;
+    
+  )
+}
+
+export default UserMenu

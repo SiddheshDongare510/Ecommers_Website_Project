@@ -1,7 +1,7 @@
 {
   "name": "ecommerseweb",
   "version": "1.0.0",
-  "proxy":"http://localhost:8080",
+  "proxy": "http://localhost:8080",
   "description": "ecommerse web api",
   "main": "server.js",
   "type": "module",
@@ -25,6 +25,7 @@
     "mongoose": "^8.2.1",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.0",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
+    "slugify": "^1.6.6"
   }
 }

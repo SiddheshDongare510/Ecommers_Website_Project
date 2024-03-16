@@ -1,6 +1,6 @@
 import express from "express";
 import { registerController, loginController, testController, forgotPaswwordController } from "../controllers/authController.js";
-import { isAdmin, reqireSignIn } from "../middlewares/authMiddleware.js";
+import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
 //router object
 const router=express.Router();
 
@@ -16,15 +16,15 @@ router.post("/login", loginController);
 router.post('/forgot-password', forgotPaswwordController);
 
 //test routes
-router.get('/test',reqireSignIn,isAdmin, testController);
+router.get('/test',requireSignIn,isAdmin, testController);
 
 //protected user route auth 
-router.get("/user-auth" , reqireSignIn, (req,res) => {
+router.get("/user-auth" , requireSignIn, (req,res) => {
     res.status(200).send({ok:true});
 });
 
 //protected  admin route auth 
-router.get("/admin-auth" , reqireSignIn,isAdmin, (req,res) => {
+router.get("/admin-auth" , requireSignIn,isAdmin, (req,res) => {
     res.status(200).send({ok:true});
 });
 
