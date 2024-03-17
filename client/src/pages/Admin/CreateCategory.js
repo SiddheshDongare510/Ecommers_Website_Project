@@ -70,7 +70,7 @@ else{
 
       );
       if (data?.success) {
-        toast.success(`category is updated`);
+        toast.success(`${updatedName} is updated`);
         setSelected(null);
         // eslint-disable-next-line no-const-assign
         setUpdatedName=("");
