@@ -18,6 +18,7 @@ export const authEndPoints = {
     userAuth : auth_base + "/user-auth",
     adminAuth : auth_base + "/admin-auth",
     getCategory :get_base + "/get-category",
+    getProduct :product_base + "/get-product",
     createCategory:get_base +"/create-category",
     createProduct:product_base +"/create-product",
     navToProduct:dash_base +"/admin/products",
