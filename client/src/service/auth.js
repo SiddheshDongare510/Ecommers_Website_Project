@@ -18,6 +18,7 @@ export const authEndPoints = {
     adminAuth : auth_base + "/admin-auth",
     getCategory :get_base + "/get-category",
     createCategory:get_base +"/create-category",
+    createProfile:auth_base+"/profile",
 
   // updateCategory :update_base +"/update-category/${categoryId}",
 
