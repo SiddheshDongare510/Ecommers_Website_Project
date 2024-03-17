@@ -6,14 +6,15 @@ import axios from 'axios';
 import { authEndPoints } from '../../service/auth';
 import CategoryForm from '../../components/form/CategoryForm';
 import {Modal} from 'antd';
+
  const CreateCategory = () => {
  
   const[categories, setCategories]=useState([]);
   const [name, setName]=useState("");
   const [visible, setVisible]=useState(false);
   const [selected, setSelected]=useState(null);
-
-  const [updatedName, setUpdatedName]=useState("");
+  const [updatedName, setUpdatedName]= useState("");
+ 
   //handle form
   const handleSubmit= async (e)=>{
     e.preventDefault()
@@ -58,15 +59,17 @@ else{
     e.preventDefault();
     try{
       const { data } = await axios.put(
-        `/api/v1/category/update-category/${selected._id}`,
-        { name: updatedName }
+        `http://localhost:8080/api/v1/category/${selected._id }`,
+        {name: updatedName }
       );
       if (data?.success) {
         toast.success(`${updatedName} is updated`);
         setSelected(null);
+        // eslint-disable-next-line no-const-assign
         setUpdatedName=("");
         setVisible(false);
         getAllCategory();
+
 
       } else {
         toast.error(data.message);

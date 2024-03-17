@@ -7,8 +7,6 @@ const get_base ="http://localhost:8080/api/v1/category";
 
 
 
-
-
 export const authEndPoints = {
     register: auth_base + "/register",
     login: auth_base + "/login",
@@ -17,7 +15,7 @@ export const authEndPoints = {
     adminAuth : auth_base + "/admin-auth",
     getCategory :get_base + "/get-category",
     createCategory:get_base +"/create-category",
-   // updateCategory :update_base +"/update-category",
+  // updateCategory :update_base +"/update-category/${categoryId}",
 
 }
 
