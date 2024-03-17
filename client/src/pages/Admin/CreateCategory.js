@@ -5,15 +5,15 @@ import toast from 'react-hot-toast'
 import axios from 'axios';
 import { authEndPoints } from '../../service/auth';
 import CategoryForm from '../../components/form/CategoryForm';
-
 import {Modal} from 'antd';
-const CreateCategory = () => {
-  
+ const CreateCategory = () => {
+ 
   const[categories, setCategories]=useState([]);
   const [name, setName]=useState("");
   const [visible, setVisible]=useState(false);
   const [selected, setSelected]=useState(null);
   const [updatedName, setUpdatedName]=useState("");
+
 
   //handle form
   const handleSubmit= async (e)=>{
@@ -54,22 +54,24 @@ else{
   useEffect(() =>{
     getAllCategory();
   }, []);
-  
+
    //update cat
    const handleUpdate =async(id)=>{
-    
     try{
       
       const { data } = await axios.put(
         authEndPoints.updateCategory + selected._id,
-        { name: updatedName }
+        {name: updatedName }
+
       );
       if (data?.success) {
         toast.success(`${updatedName} is updated`);
         setSelected(null);
+        // eslint-disable-next-line no-const-assign
         setUpdatedName=("");
         setVisible(false);
         getAllCategory();
+
 
       } else {
         toast.error(data.message);

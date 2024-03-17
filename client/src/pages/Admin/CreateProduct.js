@@ -24,7 +24,7 @@ const  CreateProduct = () => {
   //get all category
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`${authEndPoints.getCategory}`);
+      const { data } = await axios.get(`${authEndPoints.getCategory }`);
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -98,7 +98,7 @@ const handleCreate = async (e) => {
           <div className="mb-3">
             {photo && (
               <div className="text-center">
-                <img src={URL.createObjectURL(photo)} alt="product-photo" 
+                <img src={URL.createObjectURL(photo)} alt="product_photo" 
                 height={"200px"} 
                 className="img img-responsive"
                 />
