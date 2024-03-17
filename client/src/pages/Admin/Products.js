@@ -22,7 +22,7 @@ const {data}=await axios.get(`${authEndPoints.getProduct }`);
     //Life cycle
     useEffect(()=>{
         getAllProducts();
-    }, [])
+    }, []);
   return (
     <Layout>
     < div className="row dashboard ">
@@ -54,7 +54,7 @@ const {data}=await axios.get(`${authEndPoints.getProduct }`);
     </div>
       </div>
         </Layout>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

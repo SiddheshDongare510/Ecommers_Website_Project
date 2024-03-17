@@ -5,17 +5,13 @@ import toast from 'react-hot-toast'
 import axios from 'axios';
 import { authEndPoints } from '../../service/auth';
 import CategoryForm from '../../components/form/CategoryForm';
-
-
 import {Modal} from 'antd';
-
  const CreateCategory = () => {
  
   const[categories, setCategories]=useState([]);
   const [name, setName]=useState("");
   const [visible, setVisible]=useState(false);
   const [selected, setSelected]=useState(null);
-
   const [updatedName, setUpdatedName]=useState("");
 
 
@@ -58,10 +54,9 @@ else{
   useEffect(() =>{
     getAllCategory();
   }, []);
-  
+
    //update cat
    const handleUpdate =async(id)=>{
-  
     try{
       
       const { data } = await axios.put(
