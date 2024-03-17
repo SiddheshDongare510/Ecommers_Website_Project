@@ -5,6 +5,8 @@ import toast from 'react-hot-toast'
 import axios from 'axios';
 import { authEndPoints } from '../../service/auth';
 import CategoryForm from '../../components/form/CategoryForm';
+const [selected, setSelected]=useState(null);
+
 import {Modal} from 'antd';
  const CreateCategory = () => {
  
@@ -14,6 +16,7 @@ import {Modal} from 'antd';
   const [selected, setSelected]=useState(null);
 
   const [updatedName, setUpdatedName]=useState("");
+
   //handle form
   const handleSubmit= async (e)=>{
     e.preventDefault()
@@ -26,39 +29,41 @@ if (data?.success) {
   
 }
 else{
-  toast.error(data.message)
+  toast.error(data.message);
 }
 }
     
     catch(error){
-      console.log(error)
-      toast.error('something went wrong in input form')
+      console.log(error);
+      toast.error('something went wrong in input form');
     }
-  }
+  };
   
   //get all cat
   const getAllCategory = async()=>{
     try{
       const { data } = await axios.get(`${authEndPoints.getCategory}`);
       
-      if (data.success) {
-        setCategories(data.category);
+      if (data?.success) {
+        setCategories(data?.category);
       }
     }
     catch(error){
     console.log(error)
-    toast.error("Something went wrong in getting category")
+    toast.error("Something went wrong in getting category");
     }
   };
   useEffect(() =>{
     getAllCategory();
   }, []);
+  
    //update cat
    const handleUpdate =async(e)=>{
     e.preventDefault();
     try{
+      
       const { data } = await axios.put(
-        `/api/v1/category/update-category/${selected._id}`,
+        authEndPoints.updateCategory + selected._id,
         { name: updatedName }
       );
       if (data?.success) {
@@ -73,13 +78,32 @@ else{
       }
     }
     catch(error){
+      toast.error('Something went wrong ');
+    }
+   };
+
+   //delete cat
+   const handleDelete = async(pId)=>{
+    try{
+      const { data } = await axios.delete(
+      authEndPoints.deleteCategory + pId,
+      );
+      if (data?.success) {
+        toast.success(`category is deleted`);
+        getAllCategory();
+      } else {
+        toast.error(data.message);
+      }
+    }
+    catch(error){
       toast.error('Something went wrong ')
     }
    };
-  return (
-    <Layout title ={"Dashboard-Create Category"}>
 
-       <div className="container-fluid m-3 p-3">
+  return (
+    <Layout title ={"Dashboard - Create Category"}>
+
+       <div className="container-fluid m-3 p-3 dashboard">
     <div className="row">
       <div className="col-md-3">
         <AdminMenu/>
@@ -108,7 +132,7 @@ else{
       <td key={c._id}>{c.name}</td>
       <td>
         <button className="btn btn-primary ms-2" onClick={()=> {setVisible(true); setUpdatedName(c.name);  setSelected(c);}}>Edit</button>
-        <button className="btn btn-danger ms-2">Delete</button>
+        <button className="btn btn-danger ms-2" onClick={() => {handleDelete(c._id)}}>Delete</button>
         </td>
         </tr>
         </>
@@ -119,14 +143,14 @@ else{
 
         </div>
         <Modal onCancel ={()=>setVisible(false)} footer={null} 
-        visible={visible}>
+        open={visible}>
           <CategoryForm value={updatedName} setValue={setUpdatedName} handleSubmit={handleUpdate}/>
 
         </Modal>
         </div></div>
         </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default CreateCategory
+export default CreateCategory;

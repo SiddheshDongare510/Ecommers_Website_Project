@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 import {Select} from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { authEndPoints } from '../../service/auth';
 const {Option} = Select;
 
 
@@ -23,7 +24,7 @@ const  CreateProduct = () => {
   //get all category
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get(`${authEndPoints.getCategory}`);
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -48,12 +49,12 @@ const handleCreate = async (e) => {
     productData.append("quantity",quantity)
     productData.append("photo",photo)
     productData.append("category",category)
-    const {data} = axios.post("/api/v1/product/create-product", productData);
+    const {data} = axios.post(`${authEndPoints.createProduct}`, productData);
     if(data?.success){
       toast.error(data?.message);
     }else{
-      toast.success('Product created Successfully')
-      navigate('/dashboard/admin/products')
+      toast.success('Product created Successfully');
+      navigate(`${authEndPoints.navToProduct}`);
     }
 
   } catch(error){
@@ -73,7 +74,7 @@ const handleCreate = async (e) => {
         <h1>Create Product</h1>
         <div className ="m-1 w-75">
           <Select 
-          bordered={false}
+          varient ={false}
           placeholder="Select a category"
           size="large"
           showSearch
@@ -138,7 +139,7 @@ const handleCreate = async (e) => {
           </div>
           <div className="mb-3">
             <Select 
-             bordered={false} 
+             varient = {false}
              placeholder="Select Shipping"
              size="large"
              showSearch
