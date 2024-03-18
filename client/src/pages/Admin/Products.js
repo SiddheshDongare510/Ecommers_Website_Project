@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import { authEndPoints } from '../../service/auth';
 
+
 const Products = () => {
     const [products, setProducts]=useState([])
     //get all products
@@ -38,7 +39,7 @@ const {data}=await axios.get(`${authEndPoints.getProduct }`);
         
               <div className="card m-2" style={{ width: "18rem" }}>
                 <img
-                    src to={`/api/v1/product/product-photo/${p._id}`}
+                    src to={p._id}
                     className="card-img-top"
                     alt={p.name}
                   />
