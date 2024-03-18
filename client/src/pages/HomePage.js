@@ -18,7 +18,7 @@ const HomePage = () => {
       
       if (data?.success) {
         setCategories(data?.category);
-      }
+              }
     }
     catch(error){
     console.log(error);
@@ -99,8 +99,8 @@ const handleFilter = (value,id) => {
           <div className="d-flex flex-wrap">
           {products?.map((p) => (
                 <div className="card m-2" style={{ width: "18rem" }}>
-                  <img
-                    src={`http://localhost:8080/api/v1/category/${p._id}` }
+                  <img                  
+                    src={`/api/v1/product/product-photo/${p._id}` }
                     className="card-img-top"
                     alt={p.name}
                   />
