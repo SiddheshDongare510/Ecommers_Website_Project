@@ -7,19 +7,19 @@ const About = () => {
       <div className="row contactus ">
         <div className="col-md-6 ">
           <img
-            src="/images/about.jpeg"
+            src="/images/aboutuspagephoto.jpg"
             alt="contactus"
             style={{ width: "100%" }}
           />
         </div>
         <div className="col-md-4">
           <p className="text-justify mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            officiis obcaecati esse tempore unde ratione, eveniet mollitia,
-            perferendis eius temporibus dicta blanditiis doloremque explicabo
-            quasi sunt vero optio cum aperiam vel consectetur! Laborum enim
-            accusantium atque, excepturi sapiente amet! Tenetur ducimus aut
-            commodi illum quidem neque tempora nam.
+          At OnlineShopee, we strive to provide our customers with an exceptional online shopping experience. 
+          Founded with a passion for quality products and customer satisfaction, 
+          we aim to offer a curated selection of watches. Whether you're searching for wristwatch or wall watch, 
+          we're dedicated to delivering premium goods at competitive prices. 
+          With a commitment to innovation, integrity, and excellence, 
+          we continually seek to exceed expectations and build lasting relationships with our valued customers.
           </p>
         </div>
       </div>

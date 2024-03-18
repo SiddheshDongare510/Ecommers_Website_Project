@@ -7,7 +7,7 @@ import {Checkbox,Radio} from 'antd';
 import { Prices } from "../components/Prices";
 
 const HomePage = () => {
-  const [product,setProduct] = useState([])
+  const [products,setProducts] = useState([])
   const [categories,setCategories] = useState([])
   const [checked,setChecked] = useState([]);
   const [radio,setRadio] = useState([]);
@@ -32,7 +32,7 @@ const HomePage = () => {
   const getAllProducts = async () => {
     try{
       const {data} = await axios.get(`${authEndPoints.getProduct}`);
-      setProduct(data.products);
+      setProducts(data.products);
     } catch(error){
       console.log(error)
     }
@@ -60,7 +60,7 @@ const handleFilter = (value,id) => {
   //get filtered product
   const filterProduct = async () => {
     try{
-      const {data} = await axios.post('/api/v1/product/product-filters',{checked,radio})
+      const {data} = await axios.post(`${authEndPoints.createFilter}`,{checked,radio})
       setProducts(data?.products)
     } catch(error){
       console.log(error)
@@ -100,7 +100,7 @@ const handleFilter = (value,id) => {
           {products?.map((p) => (
                 <div className="card m-2" style={{ width: "18rem" }}>
                   <img
-                    src={`/api/v1/product/product-photo/${p._id}`}
+                    src={`http://localhost:8080/api/v1/category/${p._id}` }
                     className="card-img-top"
                     alt={p.name}
                   />
@@ -120,4 +120,4 @@ const handleFilter = (value,id) => {
   );
 };
 
-export default HomePage
+export default HomePage;

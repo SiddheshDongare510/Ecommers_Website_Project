@@ -13,13 +13,15 @@ const Policy = () => {
           />
         </div>
         <div className="col-md-4">
+          <p>OnlineShopee is committed to protecting the 
+            privacy of our users. This Privacy Policy outlines how we collect, 
+            use, disclose, and protect the information gathered from visitors to our website.</p>
+          {/* <p>add privacy policy</p>
           <p>add privacy policy</p>
           <p>add privacy policy</p>
           <p>add privacy policy</p>
           <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
+          <p>add privacy policy</p> */}
         </div>
       </div>
     </Layout>

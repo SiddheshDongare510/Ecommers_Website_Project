@@ -28,5 +28,6 @@ export const authEndPoints = {
     deleteCategory: get_base + `/delete-category/`,
     deleteProduct:product_base+`delete-product`,
     getProduct:product_base + "/get-product" ,
+    productCount:product_base + "/product-count",
 }
 
