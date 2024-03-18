@@ -1,6 +1,8 @@
 import productModel from "../models/productModel.js";
 import fs from 'fs';
 import slugify from 'slugify';
+
+
 export const createProductController = async (req,res) => {
     try{
         const {name,slug,description,price,category,quantity,shipping}= req.fields
