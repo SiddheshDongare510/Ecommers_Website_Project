@@ -19,7 +19,7 @@ const Register = () => {
             e.preventDefault();
           try {
             console.log("printing register api: ", authEndPoints.register)
-    const res = await axios.post(`${authEndPoints.register}`, {
+    const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`, {
       name,
       email,
       password,
@@ -41,7 +41,7 @@ const Register = () => {
             
           }
         };
-
+console.log(process.env.REACT_APP_API);
   return (
     <Layout title="Register-Ecommerce app">
       <div className='form-container'>

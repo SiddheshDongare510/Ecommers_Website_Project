@@ -26,7 +26,7 @@ const {data}=await axios.get(`${authEndPoints.getProduct }`);
     }, []);
   return (
     <Layout>
-    < div className="row dashboard ">
+    <div div className="row dashboard ">
       <div className="col-md-3 ">
         <AdminMenu />
       </div>
@@ -34,12 +34,13 @@ const {data}=await axios.get(`${authEndPoints.getProduct }`);
         <h1 className="text-center">All Products List</h1>
         <div className='d-flex flex-wrap'>
         {products?.map((p) => (
-          <Link key ={p._id} to ={`/dashboard/admin/product/${p.slug}`} className='product-link'>
+          <Link key ={p._id} to ={`/dashboard/admin/product/${p.slug}`} className='product-link'> 
+           {/* <Link key = {p._id} to = {`${authEndPoints.seeallproduct}${p.slug}`} className='product-link' >  */}
 
         
               <div className="card m-2" style={{ width: "18rem" }}>
                 <img
-                    src to={p._id}
+                    src={`${authEndPoints.callphoto}${p._id}` } to={p._id} 
                     className="card-img-top"
                     alt={p.name}
                   />

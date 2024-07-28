@@ -27,7 +27,7 @@ const UpdateProduct = () => {
   //get single product
   const getSingleProduct = async () => {
     try {
-      const { data } =await axios.get(`${authEndPoints.getProduct}`);
+      const { data } =await axios.get(`${process.env.REACT_APP_API}/api/v1/product/get-product/${params.slug}`);
       
       setName(data.product.name);
       setId(data.product._id);
@@ -72,28 +72,31 @@ const UpdateProduct = () => {
       productData.append("description", description);
       productData.append("price", price);
       productData.append("quantity", quantity);
-      photo && productData.append("photo", photo);
+      if (photo) productData.append("photo", photo);
       productData.append("category", category);
-      const { data } =  axios.post(`${authEndPoints.updateProduct}` ,productData);
+  
+      const { data } = await axios.put(`${authEndPoints.updateProduct}/${id}`, productData);
+  
       if (data?.success) {
-        toast.error(data?.message);
-      } else {
-        toast.success("Product Updated Successfully");
+        toast.success(data?.message || "Product Updated Successfully");
         navigate("/dashboard/admin/products");
+      } else {
+        toast.error(data?.message || "Product update failed");
       }
     } catch (error) {
       console.log(error);
-      toast.error("something went wrong");
+      toast.error("Something went wrong");
     }
   };
+  
 
   //delete a product
-  const handleDelete = async (pId) => {
+  const handleDelete = async () => {
     try {
       let answer = window.prompt("Are You Sure want to delete this product ? ");
       if (!answer) return;
       const { data } = await axios.delete(
-        authEndPoints.deleteProduct + pId,
+        `${authEndPoints.deleteProduct}/${id}`,
         );
       toast.success("Product DEleted Succfully");
       navigate("/dashboard/admin/products");
@@ -154,7 +157,7 @@ const UpdateProduct = () => {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`/api/v1/product/product-photo/${params.slug}`}
+                      src={`${authEndPoints.callphoto}${id}`}
                       alt="product_photo"
                       height={"200px"}
                       className="img img-responsive"

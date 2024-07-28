@@ -54,7 +54,7 @@ const handleCreate = async (e) => {
       toast.error(data?.message);
     }else{
       toast.success('Product created Successfully');
-      navigate(`${authEndPoints.navToProduct}`);
+      navigate("/");//home pe krdo
     }
 
   } catch(error){

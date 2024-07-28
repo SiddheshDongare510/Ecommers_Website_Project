@@ -6,6 +6,8 @@ const get_base ="http://localhost:8080/api/v1/category";
 const product_base = "http://localhost:8080/api/v1/product";
 const dash_base = "http://localhost:8080/dashboard";
 const filter_base= "http://localhost:8080/api/v1/product";
+const image_base= "http://localhost:8080/api/v1/product/product-photo/";
+const seeproduct_base="http://localhost:8080/dashboard/admin/product/";
 
 //const update_base = `http://localhost:8080/api/v1/category/${selected._id }`;
 
@@ -22,16 +24,21 @@ export const authEndPoints = {
     createCategory:get_base +"/create-category",
     createProfile:auth_base+"/profile",
     createFilter:filter_base+"/product-filters",
+    callphoto: image_base,
+    seeallproduct:seeproduct_base,
 
-  // updateCategory :update_base +"/update-category/${categoryId}",
+  // updateCategory :update_base +"/update-category/${categoryId}",/
 
     createProduct:product_base +"/create-product",
     navToProduct:dash_base +"/admin/products",
     updateCategory : get_base +`/update-category/`,
     deleteCategory: get_base + `/delete-category/`,
-    deleteProduct:product_base+`delete-product`,
- 
+    
+    updateProduct:product_base+`/update-product`,
+    deleteProduct:product_base+`/delete-product`,
     productImage:product_base +"/product-photo",
+    productCount: product_base + "/product-count",
+    productList: product_base + "/product-list",
 }
 
 

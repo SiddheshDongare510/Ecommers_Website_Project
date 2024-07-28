@@ -14,7 +14,7 @@ const Spinners = ({path ="login"}) => {
             state: location.pathname,
         })
         return () => clearInterval(interval)
-    },[count,navigate, location, path]);
+    },[count,navigate, location,path]);
   return (
     <>
       <div className="d-flex flex-column justify-content-center align-items-center"

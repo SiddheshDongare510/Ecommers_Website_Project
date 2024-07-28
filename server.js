@@ -7,6 +7,7 @@ import authRoutes from './routes/authRoute.js';
 import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from './routes/productRoutes.js';
 import cors from 'cors';
+
 //configure env
 dotenv.config();
 
@@ -14,6 +15,7 @@ dotenv.config();
 connectDB();
 
 //rest object
+
 const app = express();
 
 //middlewares
